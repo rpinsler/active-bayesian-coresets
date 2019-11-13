@@ -1,0 +1,104 @@
+# Bayesian Batch Active Learning as Sparse Subset Approximation
+
+###Academic and Non-Commercial Research Use Software License and Terms of Use
+
+Bayesian Batch Active Learning as Sparse Subset Approximation is a software
+package to perform Bayesian batch active learning according to specific
+algorithms (the “Software”).  The Software is designed to automatically run
+active learning experiments in a manner that iteratively selects batches of
+query points to be labelled in such a way that learning is achieved in as
+few queries as possible.
+
+The Software was developed by Robert Pinsler, Jonathan Gordon, Eric Nalisnick,
+and Jose Miguel Hernandez-Lobato at the University of Cambridge. Pursuant to an
+inter-institutional agreement between the parties it is distributed for free
+academic and non-commercial research use by the Chancellor, Masters and Scholars
+of the University of Cambridge ("Cambridge") and Samsung Electronics Co., Ltd ("Samsung").
+
+Using the Software indicates your agreement to be bound by the terms
+of this Software Use Agreement (“Agreement”). Absent your agreement
+to the terms below, you (the “End User”) have no rights to hold or
+use the Software whatsoever.
+
+Cambridge and Samsung agree to grant hereunder the limited
+non-exclusive license to End User for the use of the Software in the
+performance of End User’s internal, non-commercial research and academic
+use at End User’s academic or not-for-profit research institution
+(“Institution”) on the following terms and conditions:
+
+**1.  NO REDISTRIBUTION.** The Software remains the property of Cambridge and
+Samsung, and except as set forth in Section 4, End User
+shall not publish, distribute, or otherwise transfer or make
+available the Software to any other party.
+
+**2.  NO COMMERCIAL USE.** End User shall not use the Software for
+commercial purposes and any such use of the Software is expressly
+prohibited. This includes, but is not limited to, use of the
+Software in fee-for-service arrangements, core facilities or
+laboratories or to provide research services to (or in collaboration
+with) third parties for a fee, and in industry-sponsored
+collaborative research projects where any commercial rights are
+granted to the sponsor. If End User wishes to use the Software for
+commercial purposes or for any other restricted purpose, End User
+must execute a separate license agreement with Samsung.
+
+**3.  OWNERSHIP AND COPYRIGHT NOTICE.** Cambridge and Samsung own
+all intellectual property in the Software. End User shall gain no
+ownership to the Software. End User shall not remove or delete and
+shall retain in the Software, in any modifications to Software and
+in any Derivative Works, the copyright, trademark, or other notices
+pertaining to Software as provided with the Software.
+
+**4.  DERIVATIVE WORKS.** End User may create and use Derivative Works,
+as such term is defined under U.S. copyright laws, provided that any
+such Derivative Works shall be restricted to non-commercial,
+internal research and academic use at End User’s Institution. End
+User may distribute Derivative Works to other Institutions solely
+for the performance of non-commercial, internal research and
+academic use on terms substantially similar to this License and
+Terms of Use.
+
+**5.  PUBLICATION & ATTRIBUTION.** End User has the right to publish,
+present, or share results from the use of the Software.  In
+accordance with customary academic practice, End User will
+acknowledge Cambridge and Samsung as the providers
+of the Software and may cite the relevant reference(s) from the
+following list of publications:
+
+Bayesian Batch Active Learning as Sparse Subset Approximation
+Robert Pinsler, Jonathan Gordon, Eric Nalisnick, and Jose Miguel Hernandez-Lobato
+*Advances in Neural Information Processing Systems*, 2019
+
+**6.  NO WARRANTIES.** THE SOFTWARE IS PROVIDED "AS IS." TO THE FULLEST
+EXTENT PERMITTED BY LAW, CAMBRIDGE AND SAMSUNG HEREBY DISCLAIM ALL WARRANTIES
+OF ANY KIND (EXPRESS, IMPLIED OR OTHERWISE) REGARDING THE SOFTWARE, INCLUDING
+BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, OWNERSHIP, AND NON-INFRINGEMENT.  CAMBRIDGE AND SAMSUNG
+MAKE NO WARRANTY ABOUT THE ACCURACY, RELIABILITY, COMPLETENESS, TIMELINESS,
+SUFFICIENCY OR QUALITY OF THE SOFTWARE.  CAMBRIDGE AND SAMSUNG DO NOT WARRANT
+THAT THE SOFTWARE WILL OPERATE WITHOUT ERROR OR INTERRUPTION.
+
+**7.  LIMITATIONS OF LIABILITY AND REMEDIES.** USE OF THE SOFTWARE IS AT
+END USER’S OWN RISK. IF END USER IS DISSATISFIED WITH THE SOFTWARE,
+ITS EXCLUSIVE REMEDY IS TO STOP USING IT.  IN NO EVENT SHALL
+CAMBRIDGE OR SAMSUNG BE LIABLE TO END USER OR ITS INSTITUTION, IN CONTRACT,
+TORT OR OTHERWISE, FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL,
+CONSEQUENTIAL, PUNITIVE OR OTHER DAMAGES OF ANY KIND WHATSOEVER ARISING
+OUT OF OR IN CONNECTION WITH THE SOFTWARE, EVEN IF CAMBRIDGE OR SAMSUNG IS
+NEGLIGENT OR OTHERWISE AT FAULT, AND REGARDLESS OF WHETHER CAMBRIDGE,
+SAMSUNG IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+**8. NON-USE OF NAME.**  Nothing in this License and Terms of Use shall
+be construed as granting End Users or their Institutions any rights
+or licenses to use any trademarks, service marks or logos associated
+with the Software.  You may not use the terms “Cambridge” or “Samsung”
+(or a substantially similar term) in any way that is inconsistent with
+the permitted uses described herein. You agree not to use any name or
+emblem of Cambridge, Samsung, or any of their subdivisions for any purpose,
+or to falsely suggest any relationship between End User (or its
+Institution) and Cambridge or Samsung, or in any manner that would infringe
+or violate any of their rights.
+
+**9.** End User represents and warrants that it has the legal authority
+to enter into this License and Terms of Use on behalf of itself and
+its Institution.
