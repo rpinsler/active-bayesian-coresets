@@ -17,7 +17,7 @@ parser = argparse.ArgumentParser()
 
 # experiment
 parser.add_argument("--save_dir", default='./experiments/active_torchvision', help="Save directory")
-parser.add_argument("--data_dir", default='/scratch/rp586/', help="Save directory")
+parser.add_argument("--data_dir", default='./data', help="Data directory")
 parser.add_argument("--seed", type=int, default=222, help="Random seed for data generation")
 parser.add_argument("--init_num_labeled", type=int, default=1000, help="Number of labeled observations in dataset")
 parser.add_argument("--dataset", default='cifar10', help="Torchvision dataset")
