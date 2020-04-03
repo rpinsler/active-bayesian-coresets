@@ -6,7 +6,7 @@ import pickle
 import time
 
 import acs.utils as utils
-from acs.coresets import ProjectedFrankWolfe, ProjectedGIGA
+from acs.coresets import ProjectedFrankWolfe
 from acs.al_data_set import Dataset, ActiveLearningDataset as ALD
 
 from resnet.resnets import resnet18
@@ -20,8 +20,7 @@ parser.add_argument("--data_dir", default='./data', help="Data directory")
 parser.add_argument("--seed", type=int, default=222, help="Random seed for data generation")
 parser.add_argument("--init_num_labeled", type=int, default=1000, help="Number of labeled observations in dataset")
 parser.add_argument("--dataset", default='cifar10', help="Torchvision dataset")
-parser.add_argument("--model_file", default='/scratch/acs/models/pretrained-resnet18_84_v3/model_best.pth.tar',
-                    help="Model directory")
+parser.add_argument("--model_file", default='./models/best.pth.tar', help="Model directory")
 
 # optimization params
 parser.add_argument('--training_epochs', type=int, default=250, help='Number of training iterations')
@@ -104,8 +103,6 @@ if __name__ == '__main__':
 
     if args.coreset == 'FW':
         coreset = ProjectedFrankWolfe
-    elif args.coreset == 'GIGA':
-        coreset = ProjectedGIGA
     else:
         raise ValueError('Invalid coreset algorithm: {}'.format(args.coreset))
 

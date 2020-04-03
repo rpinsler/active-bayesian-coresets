@@ -118,61 +118,6 @@ def get_synthetic_logistic_regression(N=1000, seed=111, split_seed=None, include
     return (X, Y[:, None]), split_data(N, seed=split_seed, **kwargs)
 
 
-def get_lesion_dataset(model=None, encode=False, seed=111, **kwargs):
-    """
-    Return the data from the legion dataset
-    """
-    np.random.seed(seed)
-    IMAGE_PATH = '/scratch/rp586/active_coresets/images.npy'
-    LABEL_PATH = '/scratch/rp586/active_coresets/labels.npy'
-    # IMAGE_PATH = '/homes/rp586/active_coresets/images.npy'
-    # LABEL_PATH = '/homes/rp586/active_coresets/labels.npy'
-
-    X, Y = np.load(IMAGE_PATH), np.load(LABEL_PATH).squeeze()
-    X = np.transpose(X, [0, 3, 1, 2])
-
-    if encode:
-        images_tensor = to_gpu(torch.from_numpy(X).type(torch.FloatTensor))
-        image_batches = torch.split(images_tensor, 256)
-        with torch.no_grad():
-            encodings = [model(batch) for batch in image_batches]
-        X = torch.cat(encodings).cpu().numpy()
-
-    return (X, Y[:, None]), split_data(len(X), **kwargs)
-
-
-def get_binary_cifar_dataset(classes, model=None, encode=False, seed=111, **kwargs):
-    """
-    Return the data for binary classification from CIFAR10
-    """
-    np.random.seed(seed)
-    label_names = {
-        'airplane': 0, 'automobile': 1, 'bird': 2, 'cat': 3, 'deer': 4,
-        'dog': 5, 'frog': 6, 'horse': 7, 'ship': 8, 'truck': 9,
-    }
-    classes = [label_names[label] for label in classes]
-    cifar_train = torchvision.datasets.CIFAR10('/scratch/rp586/cifar10', train=True, download=True)
-    cifar_test = torchvision.datasets.CIFAR10('/scratch/rp586/cifar10', train=False, download=True)
-    # Pull out relevant data
-    X_train, Y_train = cifar_train.data, cifar_train.targets
-    X_test, Y_test = cifar_test.data, cifar_test.targets
-    train_indices, test_indices = np.where(np.isin(Y_train, classes))[0], np.where(np.isin(Y_test, classes))[0]
-    X_train, Y_train = X_train[train_indices], np.array(Y_train)[train_indices]
-    X_test, Y_test = X_test[test_indices], np.array(Y_test)[test_indices]
-    X = np.vstack((np.transpose(X_train, [0, 3, 1, 2]), np.transpose(X_test, [0, 3, 1, 2])))
-    Y = np.hstack((Y_train, Y_test))
-    Y = (Y == classes[0]) + 0
-
-    if encode:
-        images_tensor = to_gpu(torch.from_numpy(X).type(torch.FloatTensor))
-        image_batches = torch.split(images_tensor, 256)
-        with torch.no_grad():
-            encodings = [model(batch) for batch in image_batches]
-        X = torch.cat(encodings).cpu().numpy()
-
-    return (X, Y[:, None]), split_data(len(X), **kwargs)
-
-
 def get_torchvision_dataset(name, model=None, encode=False, seed=111, data_dir='./', **kwargs):
     """
     Return one of the torch.vision datasets (supports CIFAR10, SVHN, and Fashion-MNIST)

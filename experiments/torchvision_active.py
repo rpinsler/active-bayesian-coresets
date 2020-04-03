@@ -21,8 +21,7 @@ parser.add_argument("--data_dir", default='./data', help="Data directory")
 parser.add_argument("--seed", type=int, default=222, help="Random seed for data generation")
 parser.add_argument("--init_num_labeled", type=int, default=1000, help="Number of labeled observations in dataset")
 parser.add_argument("--dataset", default='cifar10', help="Torchvision dataset")
-parser.add_argument("--model_file", default='/scratch/acs/models/pretrained-resnet18_84_v3/model_best.pth.tar',
-                    help="Model directory")
+parser.add_argument("--model_file", default='./models/best.pth.tar', help="Model directory")
 
 # optimization params
 parser.add_argument('--training_epochs', type=int, default=250, help='Number of training iterations')
@@ -37,7 +36,7 @@ parser.add_argument("--cov_rank", type=int, default=2, help='Rank of cov matrix 
 # active learning params
 parser.add_argument('--budget', type=int, default=10000, help='Active learning budget')
 parser.add_argument('--batch_size', type=int, default=100, help='Active learning batch size')
-parser.add_argument('--acq', default='BALD', help='AL acquisition function (BALD, Entropy, VarRatios, None)')
+parser.add_argument('--acq', default='BALD', help='AL acquisition function (BALD, Entropy, None)')
 parser.add_argument('--num_features', type=int, default=256, help='Number of features in feature extractor.')
 parser.add_argument('--coreset', default='Argmax', help='Coreset algo (Argmax, Random, KCenter, KMedoids, Best)')
 parser.add_argument("--pretrained_model", dest="pretrained_model", default=False, action="store_true",
@@ -104,8 +103,6 @@ if __name__ == '__main__':
         acq = A.class_bald
     elif args.acq == 'Entropy':
         acq = A.class_maxent
-    elif args.acq == 'VarRatios':
-        acq = A.class_varratio
     elif args.acq == 'None':
         acq = lambda *args, **kwargs: None  # not needed
     else:
