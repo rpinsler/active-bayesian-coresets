@@ -4,7 +4,7 @@ This repository contains the code to reproduce the experiments carried out in
 
 The code has been authored by: Robert Pinsler and Jonathan Gordon.
 
-## Dependencies
+## Dependencies and Data Requirements
 
 This code requires the following:
 * Python  >= 3.5
@@ -17,12 +17,14 @@ This code requires the following:
 * matplotlib
 * gtimer
 
+To run the regression experiments, please [download](http://archive.ics.uci.edu/ml/datasets.php) the UCI regression datasets and place them into ./data.
+
 ## GPU Requirements
 * The code supports experiments on either GPU or CPU processors.
 
 ## Usage
 The experiments provided in this code base include active learning on standard vision based datasets (classification)
-and UCI datasets (regression). In particular, the following experiments are provided (see section 7 of the
+and UCI datasets (regression). The following experiments are provided (see section 7 of the
 paper):
 
 1. Active learning for regression: run the following command 
